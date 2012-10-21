@@ -1,0 +1,189 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Kamerka\n"
+"Report-Msgid-Bugs-To: dos@dosowisko.net\n"
+"POT-Creation-Date: 2011-07-24 14:19+0200\n"
+"PO-Revision-Date: 2011-07-12 23:24+0100\n"
+"Last-Translator: Sebastian Krzyszkowiak <dos@dosowisko.net>\n"
+"Language-Team: pl_PL <dos@dosowisko.net>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Polish\n"
+"X-Poedit-Country: POLAND\n"
+
+#: src/kamerka.qml:200
+msgid "Take a photo"
+msgstr "Zrób zdjęcie"
+
+#: src/kamerka.qml:210
+msgid "Self-timer"
+msgstr "Samowyzwalacz"
+
+#: src/kamerka.qml:221
+msgid "Less"
+msgstr "Mniej"
+
+#: src/kamerka.qml:221
+msgid "More"
+msgstr "Więcej"
+
+#: src/kamerka.qml:233
+msgid "Configure"
+msgstr "Konfiguracja"
+
+#: src/kamerka.qml:246
+msgid "Open directory"
+msgstr "Otwórz folder"
+
+#: src/main.cpp:35
+msgid "Kamerka"
+msgstr "Kamerka"
+
+#: src/main.cpp:36
+msgid "Simple photo taking application with fancy animated interface"
+msgstr "Prosta aplikacja do robienia zdjęć z ładnym, animowanym interfejsem"
+
+#: src/main.cpp:37
+msgid "Copyright (c) 2011 Sebastian Krzyszkowiak"
+msgstr "Copyright (c) 2011 Sebastian Krzyszkowiak"
+
+#: src/mainwindow.cpp:36
+msgid "i18n() takes at least one argument"
+msgstr "i18n() wymaga conajmniej jednego argumentu"
+
+#: src/mainwindow.cpp:54
+msgid "Could not load QML interface!"
+msgstr "Nie można uruchomić interfejsu QML!"
+
+#: src/mainwindow.cpp:54 src/mainwindow.cpp:130 src/mainwindow.cpp:141
+msgid "Error"
+msgstr "Błąd"
+
+#: src/mainwindow.cpp:126 src/mainwindow.cpp:130 src/mainwindow.cpp:141
+msgid "Could not connect to V4L device!"
+msgstr "Nie można połączyć się z urządzeniem V4L!"
+
+#: src/mainwindow.cpp:170
+msgid ""
+"Requested resolution (%1x%2) was not available. Driver used %3x%4 instead.\n"
+"Please check your configuration."
+msgstr ""
+"Żądana rozdzielczość (%1x%2) nie była dostępna. Sterownik użył "
+"rozdzielczości %3x%4.\n"
+"Proszę sprawdzić swoją konfigurację."
+
+#: src/settingsdialog.cpp:42
+msgid "Selected path does not exists. Do you want to create it?"
+msgstr "Wybrana ścieżka nie istnieje. Czy chcesz ją utworzyć?"
+
+#: src/settingsdialog.cpp:59
+msgid "Device node:"
+msgstr "Plik urządzenia:"
+
+#: src/settingsdialog.cpp:66
+msgid "x"
+msgstr "x"
+
+#: src/settingsdialog.cpp:71
+msgid "px"
+msgstr "px"
+
+#: src/settingsdialog.cpp:72
+msgid "Resolution:"
+msgstr "Rozdzielczość:"
+
+#: src/settingsdialog.cpp:77
+msgid "Disabled"
+msgstr "Wyłączone"
+
+#: src/settingsdialog.cpp:78
+msgid " fps"
+msgstr " fps"
+
+#: src/settingsdialog.cpp:80
+msgid "Framerate limit:"
+msgstr "Limit klatek na sekundę:"
+
+#: src/settingsdialog.cpp:82
+msgid "Camera"
+msgstr "Kamera"
+
+#: src/settingsdialog.cpp:82
+msgid "Camera settings"
+msgstr "Ustawienia kamery"
+
+#: src/settingsdialog.cpp:89
+msgid "Use default pictures directory"
+msgstr "Użyj domyślnego folderu z obrazami"
+
+#: src/settingsdialog.cpp:96
+msgid "Use subdirectory:"
+msgstr "Użyj podfolderu:"
+
+#: src/settingsdialog.cpp:108
+msgid "Photo directory:"
+msgstr "Folder zdjęć:"
+
+#: src/settingsdialog.cpp:110
+msgid "Storage"
+msgstr "Przechowywanie"
+
+#: src/settingsdialog.cpp:110
+msgid "Photo storage"
+msgstr "Przechowywanie zdjęć"
+
+#: src/settingsdialog.cpp:116
+msgid "Play sound on taking photo"
+msgstr "Odtwarzaj dźwięk przy robieniu zdjęcia"
+
+#: src/settingsdialog.cpp:119
+msgid "Play timer sounds"
+msgstr "Odtwarzaj dźwięki samowyzwalacza"
+
+#: src/settingsdialog.cpp:122
+msgid "Show notification on taking photo"
+msgstr "Pokaż powiadomienie przy robieniu zdjęcia"
+
+#: src/settingsdialog.cpp:126
+msgid "Behaviour"
+msgstr "Zachowanie"
+
+#: src/videowidget.cpp:70
+msgid "Starting up webcam..."
+msgstr "Uruchamianie kamerki..."
+
+#: src/videowidget.cpp:129
+msgid "Photo has been stored in file %1"
+msgstr "Zdjęcie zostało zapisane w pliku %1"
+
+#: src/videowidget.cpp:134
+msgid "Show in directory"
+msgstr "Pokaż w folderze"
+
+#: src/videowidget.cpp:134
+msgid "Open in GIMP"
+msgstr "Otwórz w GIMPie"
+
+#: src/videowidget.cpp:134
+msgid "Open in Inkscape"
+msgstr "Otwórz w Inkscape"
+
+#: tools/rc.cpp:1 rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Sebastian Krzyszkowiak"
+
+#: tools/rc.cpp:2 rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "dos@dosowisko.net"
+
+#~ msgid "Settings"
+#~ msgstr "Ustawienia"

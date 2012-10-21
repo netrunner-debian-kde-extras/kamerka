@@ -1,0 +1,14 @@
+* Sebastian Krzyszkowiak <dos@dosowisko.net>
+
+Main tester:
+* Agata Kurczewska <kazimiera010595@gmail.com>
+
+v4l handling code was based on qtv4lcapture code from Özkan Pakdil <ozkan.pakdil@gmail.com>
+http://qtv4lcapture.sourceforge.net/
+
+Translations:
+ * Czech: Pavel Fric <pavelfric@seznam.cz>
+ * German: Frank Schäfer <fschaefer.oss@googlemail.com>
+ * Polish: Sebastian Krzyszkowiak <dos@dosowisko.net>
+ * Serbian: Mladen Pejaković <pejakm@gmail.com>
+ * Spanish: Daniel Halens <DanielHalens@gmail.com>

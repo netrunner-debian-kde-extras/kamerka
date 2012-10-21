@@ -1,0 +1,24 @@
+For 1.0:
+ * better scalling ui
+ * start with window size = video resolution
+ * animated preview of already taken photos
+ * some basic management of taken photos
+ * some basic effects
+ * consecutive image taking
+ * "About Kamerka" button (probably in configuration dialog)
+ * moar configuration:
+  * buttons in notifications (for instance to set Krita instead of GIMP)
+  * consecutive image taking
+  * allow using custom sounds
+  * brightness, colors, contrast
+  * time of previews
+  * image format
+
+For 1.x:
+ * photo uploading to social services
+ * moar effects
+ * various fixes and user requests
+
+For 2.0:
+ * video recording
+ * and moar effects!

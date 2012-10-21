@@ -1,0 +1,187 @@
+# Kamerka Serbian Latin Translation.
+# Copyright (C) 2011 Sebastian Krzyszkowiak
+#
+# Urs Fleisch <dos@dosowisko.net>, 2011.
+# Mladen Pejaković <pejakm@gmail.com>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: Kamerka\n"
+"Report-Msgid-Bugs-To: dos@dosowisko.net\n"
+"POT-Creation-Date: 2011-07-24 14:19+0200\n"
+"PO-Revision-Date: 2011-06-07 21:26+0100\n"
+"Last-Translator: Mladen Pejaković <pejakm@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@lists.kde.org>\n"
+"Language: sr@latin\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+
+#: src/kamerka.qml:200
+msgid "Take a photo"
+msgstr "Fotografiši"
+
+#: src/kamerka.qml:210
+msgid "Self-timer"
+msgstr "Tajmer"
+
+#: src/kamerka.qml:221
+msgid "Less"
+msgstr "Manje"
+
+#: src/kamerka.qml:221
+msgid "More"
+msgstr "Više"
+
+#: src/kamerka.qml:233
+msgid "Configure"
+msgstr "Podesi"
+
+#: src/kamerka.qml:246
+msgid "Open directory"
+msgstr "Otvori fasciklu"
+
+#: src/main.cpp:35
+msgid "Kamerka"
+msgstr "Kamerka"
+
+#: src/main.cpp:36
+msgid "Simple photo taking application with fancy animated interface"
+msgstr ""
+"Jednostavna aplikacija za hvatanje fotografija sa lepim animiranim sučeljem"
+
+#: src/main.cpp:37
+msgid "Copyright (c) 2011 Sebastian Krzyszkowiak"
+msgstr "Copyright (c) 2011 Sebastian Krzyszkowiak"
+
+#: src/mainwindow.cpp:36
+msgid "i18n() takes at least one argument"
+msgstr "i18n() zahteva bar jedan argument"
+
+#: src/mainwindow.cpp:54
+msgid "Could not load QML interface!"
+msgstr "Ne mogu da učitam QML sučelje!"
+
+#: src/mainwindow.cpp:54 src/mainwindow.cpp:130 src/mainwindow.cpp:141
+msgid "Error"
+msgstr "Greška"
+
+#: src/mainwindow.cpp:126 src/mainwindow.cpp:130 src/mainwindow.cpp:141
+msgid "Could not connect to V4L device!"
+msgstr "Ne mogu da se povežem sa V4L sučenjem!"
+
+#: src/mainwindow.cpp:170
+msgid ""
+"Requested resolution (%1x%2) was not available. Driver used %3x%4 instead.\n"
+"Please check your configuration."
+msgstr ""
+"Zahtevana rezolucija (%1x%2) nije dostupna. Drajver je koristio %3x%4.\n"
+"Proverite podešavanja."
+
+#: src/settingsdialog.cpp:42
+msgid "Selected path does not exists. Do you want to create it?"
+msgstr "Izabrana putanja ne postoji. Da li želite da je napravite?"
+
+#: src/settingsdialog.cpp:59
+msgid "Device node:"
+msgstr "Čvor uređaja:"
+
+#: src/settingsdialog.cpp:66
+msgid "x"
+msgstr "x"
+
+#: src/settingsdialog.cpp:71
+msgid "px"
+msgstr "px"
+
+#: src/settingsdialog.cpp:72
+msgid "Resolution:"
+msgstr "Rezolucija"
+
+#: src/settingsdialog.cpp:77
+msgid "Disabled"
+msgstr "Onemogućeno"
+
+#: src/settingsdialog.cpp:78
+msgid " fps"
+msgstr " fps"
+
+#: src/settingsdialog.cpp:80
+msgid "Framerate limit:"
+msgstr "Ograničenje brzine kadrova:"
+
+#: src/settingsdialog.cpp:82
+msgid "Camera"
+msgstr "Kamera"
+
+#: src/settingsdialog.cpp:82
+msgid "Camera settings"
+msgstr "Podešavanja kamere"
+
+#: src/settingsdialog.cpp:89
+msgid "Use default pictures directory"
+msgstr "Koristi podrazumevanu fasciklu slika"
+
+#: src/settingsdialog.cpp:96
+msgid "Use subdirectory:"
+msgstr "Otvori podfasciklu"
+
+#: src/settingsdialog.cpp:108
+msgid "Photo directory:"
+msgstr "Fascikla fotografija:"
+
+#: src/settingsdialog.cpp:110
+msgid "Storage"
+msgstr "Spremište"
+
+#: src/settingsdialog.cpp:110
+msgid "Photo storage"
+msgstr "Spremište fotografija"
+
+#: src/settingsdialog.cpp:116
+msgid "Play sound on taking photo"
+msgstr "Pusti zvuk pri fotografisanju"
+
+#: src/settingsdialog.cpp:119
+msgid "Play timer sounds"
+msgstr "Puštaj zvuke tajmera"
+
+#: src/settingsdialog.cpp:122
+msgid "Show notification on taking photo"
+msgstr "Prikaži obaveštenje pri fotografisanju"
+
+#: src/settingsdialog.cpp:126
+msgid "Behaviour"
+msgstr "Ponašanje"
+
+#: src/videowidget.cpp:70
+msgid "Starting up webcam..."
+msgstr "Pokrećem veb-kameru..."
+
+#: src/videowidget.cpp:129
+msgid "Photo has been stored in file %1"
+msgstr "Fotografija je smeštena u fajl %1"
+
+#: src/videowidget.cpp:134
+msgid "Show in directory"
+msgstr "Pokaži u fascikli"
+
+#: src/videowidget.cpp:134
+msgid "Open in GIMP"
+msgstr "Otvori pomoću GIMPa"
+
+#: src/videowidget.cpp:134
+msgid "Open in Inkscape"
+msgstr "Otvori pomoću Inkskejpa"
+
+#: tools/rc.cpp:1 rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Mladen Pejaković"
+
+#: tools/rc.cpp:2 rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "pejakm@gmail.com"
