@@ -4,12 +4,12 @@ Source: http://github.com/dos1/kamerka
 License: GPL-2.0+
 
 Files: *
-Copyright: 2011 Sebastian Krzyszkowiak <dos@dosowisko.net>
+Copyright: 2011-2012 Sebastian Krzyszkowiak <dos@dosowisko.net>
            2010 Özkan Pakdil <ozkan.pakdil@gmail.com>
 License: GPL-2.0+
 
 Files: debian/*
-Copyright: 2011 Sebastian Krzyszkowiak <dos@dosowisko.net>
+Copyright: 2011-2012 Sebastian Krzyszkowiak <dos@dosowisko.net>
 License: GPL-2.0+
 
 License: GPL-2.0+
