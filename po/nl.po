@@ -1,41 +1,41 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Kenny Verstraete <verstraete_kenny@skynet.be>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: dos@dosowisko.net\n"
 "POT-Creation-Date: 2012-10-21 02:02+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2011-08-07 23:05+0200\n"
+"Last-Translator: Kenny Verstraete <verstraete_kenny@skynet.be>\n"
+"Language-Team: Dutch <kde-i18n-doc@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/kamerka.qml:208
 msgid "Take a photo"
-msgstr ""
+msgstr "Neem een foto"
 
 #: src/kamerka.qml:218
 msgid "Self-timer"
-msgstr ""
+msgstr "Zelfontspanner"
 
 #: src/kamerka.qml:229
 msgid "Less"
-msgstr ""
+msgstr "Minder"
 
 #: src/kamerka.qml:229
 msgid "More"
-msgstr ""
+msgstr "Meer"
 
 #: src/kamerka.qml:239
 msgid "Configure"
-msgstr ""
+msgstr "Configureer"
 
 #: src/kamerka.qml:249
 msgid "Hide effects"
@@ -47,7 +47,7 @@ msgstr ""
 
 #: src/kamerka.qml:260
 msgid "Open directory"
-msgstr ""
+msgstr "Map openen"
 
 #: src/kamerka.qml:449
 msgid "No Effect"
@@ -71,69 +71,73 @@ msgstr ""
 
 #: src/main.cpp:36
 msgid "Kamerka"
-msgstr ""
+msgstr "Kamerka"
 
 #: src/main.cpp:37
 msgid "Simple photo taking application with fancy animated interface"
-msgstr ""
+msgstr "Simpele toepassing om foto's te nemen met een geanimeerde interface"
 
 #: src/main.cpp:38
+#, fuzzy
 msgid "Copyright (c) 2011-2012 Sebastian Krzyszkowiak"
-msgstr ""
+msgstr "Copyright (c) 2011 Sebastian Krzyszkowiak"
 
 #: src/mainwindow.cpp:36
 msgid "i18n() takes at least one argument"
-msgstr ""
+msgstr "i18n() neemt op zijn minst één argument"
 
 #: src/mainwindow.cpp:54
 msgid "Could not load QML interface!"
-msgstr ""
+msgstr "Kon QML interface niet laden!"
 
 #: src/mainwindow.cpp:54 src/mainwindow.cpp:130 src/mainwindow.cpp:146
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 #: src/mainwindow.cpp:126 src/mainwindow.cpp:130 src/mainwindow.cpp:146
 msgid "Could not connect to V4L device!"
-msgstr ""
+msgstr "Kon niet verbinden met V4L apparaat!"
 
 #: src/mainwindow.cpp:175
 msgid ""
 "Requested resolution (%1x%2) was not available. Driver used %3x%4 instead.\n"
 "Please check your configuration."
 msgstr ""
+"Gevraagde resolutie (%1x%2) was niet beschikbaar. De driver gebruikte %3x%4 "
+"in de plaats.\n"
+"Kijk uw configuratie na."
 
 #: src/settingsdialog.cpp:42
 msgid "Selected path does not exists. Do you want to create it?"
-msgstr ""
+msgstr "Geselecteerde pad bestaat niet. Wilt u het nu aanmaken?"
 
 #: src/settingsdialog.cpp:59
 msgid "Device node:"
-msgstr ""
+msgstr "Aankoppelingspunt apparaat:"
 
 #: src/settingsdialog.cpp:66
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #: src/settingsdialog.cpp:71
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: src/settingsdialog.cpp:72
 msgid "Resolution:"
-msgstr ""
+msgstr "Resolutie:"
 
 #: src/settingsdialog.cpp:77
 msgid "Disabled"
-msgstr ""
+msgstr "Uitgeschakeld"
 
 #: src/settingsdialog.cpp:78
 msgid " fps"
-msgstr ""
+msgstr " fps"
 
 #: src/settingsdialog.cpp:80
 msgid "Framerate limit:"
-msgstr ""
+msgstr "Framerate limiet:"
 
 #: src/settingsdialog.cpp:82
 msgid "Lock aspect ratio"
@@ -149,74 +153,74 @@ msgstr ""
 
 #: src/settingsdialog.cpp:93
 msgid "Camera"
-msgstr ""
+msgstr "Camera"
 
 #: src/settingsdialog.cpp:93
 msgid "Camera settings"
-msgstr ""
+msgstr "Camera instellingen"
 
 #: src/settingsdialog.cpp:100
 msgid "Use default pictures directory"
-msgstr ""
+msgstr "Gebruik de standaardmap voor afbeeldingen"
 
 #: src/settingsdialog.cpp:107
 msgid "Use subdirectory:"
-msgstr ""
+msgstr "Gebruik submap:"
 
 #: src/settingsdialog.cpp:119
 msgid "Photo directory:"
-msgstr ""
+msgstr "fotomap:"
 
 #: src/settingsdialog.cpp:121
 msgid "Storage"
-msgstr ""
+msgstr "Opslag"
 
 #: src/settingsdialog.cpp:121
 msgid "Photo storage"
-msgstr ""
+msgstr "Foto opslag"
 
 #: src/settingsdialog.cpp:127
 msgid "Play sound on taking photo"
-msgstr ""
+msgstr "Speel geluid af bij het nemen van een foto"
 
 #: src/settingsdialog.cpp:130
 msgid "Play timer sounds"
-msgstr ""
+msgstr "Speel timer geluiden af"
 
 #: src/settingsdialog.cpp:133
 msgid "Show notification on taking photo"
-msgstr ""
+msgstr "Toon notificatie bij het nemen van een foto"
 
 #: src/settingsdialog.cpp:137
 msgid "Behaviour"
-msgstr ""
+msgstr "Gedrag"
 
 #: src/videowidget.cpp:98
 msgid "Starting up webcam..."
-msgstr ""
+msgstr "Webcam aan het starten..."
 
 #: src/videowidget.cpp:160
 msgid "Photo has been stored in file %1"
-msgstr ""
+msgstr "Foto is opgeslagen in bestand %1"
 
 #: src/videowidget.cpp:165
 msgid "Show in directory"
-msgstr ""
+msgstr "Geef weer in map"
 
 #: src/videowidget.cpp:165
 msgid "Open in GIMP"
-msgstr ""
+msgstr "Openen in GIMP"
 
 #: src/videowidget.cpp:165
 msgid "Open in Inkscape"
-msgstr ""
+msgstr "Openen in Inkscape"
 
 #: tools/rc.cpp:1 rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kenny Verstraete"
 
 #: tools/rc.cpp:2 rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "verstraete_kenny@skynet.be"
