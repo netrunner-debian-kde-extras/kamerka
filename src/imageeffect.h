@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Sebastian Krzyszkowiak <dos@dosowisko.net>
+ * Copyright (c) Dejan Noveski <dr.mote@gmail.com>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,30 +16,33 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-#include <QtGui>
-#include <KLineEdit>
-#include <KConfigDialog>
-#include <KUrlRequester>
+#ifndef IMAGEEFFECT_H
+#define IMAGEEFFECT_H
 
-#ifndef SETTINGSDIALOG_H
-#define SETTINGSDIALOG_H
+#include <QObject>
 
-class SettingsDialog : public KConfigDialog
-{
-		Q_OBJECT
-	public:
-		explicit SettingsDialog(QWidget *parent, QString name, KConfigSkeleton *config);
-	private:
-		KLineEdit *subdir;
-		KUrlRequester *urledit;
-		KConfigSkeleton *config;
-		QCheckBox *subdircheck;
-		QGroupBox *xdggroupbox;
-	signals:
 
-	public slots:
-		void updateUrl();
-		void checkDir();
+class ImageEffect: public QObject{
+    Q_OBJECT
+    Q_ENUMS(Effect)
+
+public:
+
+    enum Effect {
+        Effect_None,
+        Effect_Grey,
+        Effect_Invert,
+        Effect_Mono,
+        Effect_Smurf
+    };
+
+    static void invert(QImage &image);
+    static void mono(QImage &image);
+    static void grey(QImage &image);
+    static void smurf(QImage &image);
+    static void applyEffect(QImage &image, int effect = Effect_None);
+
 };
 
-#endif // SETTINGSDIALOG_H
+
+#endif // IMAGEEFFECT_H

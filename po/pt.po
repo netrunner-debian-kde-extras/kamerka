@@ -1,222 +1,230 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: kamerka\n"
 "Report-Msgid-Bugs-To: dos@dosowisko.net\n"
 "POT-Creation-Date: 2012-10-21 02:02+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2012-10-23 03:29-0300\n"
+"Last-Translator: Jurasampaio <jura_sampaio@hotmail.com>\n"
+"Language-Team: Jurasampaio <jur_sampaio@hotmail.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Portuguese\n"
+"X-Poedit-Country: BRAZIL\n"
 
 #: src/kamerka.qml:208
 msgid "Take a photo"
-msgstr ""
+msgstr "Tirar uma foto"
 
 #: src/kamerka.qml:218
 msgid "Self-timer"
-msgstr ""
+msgstr "Temporizador"
 
 #: src/kamerka.qml:229
 msgid "Less"
-msgstr ""
+msgstr "Menos"
 
 #: src/kamerka.qml:229
 msgid "More"
-msgstr ""
+msgstr "Mais"
 
 #: src/kamerka.qml:239
 msgid "Configure"
-msgstr ""
+msgstr "Configurar"
 
 #: src/kamerka.qml:249
 msgid "Hide effects"
-msgstr ""
+msgstr "Esconder efeitos"
 
 #: src/kamerka.qml:249
 msgid "Show effects"
-msgstr ""
+msgstr "Mostrar efeitos"
 
 #: src/kamerka.qml:260
 msgid "Open directory"
-msgstr ""
+msgstr "Abrir diretorio"
 
 #: src/kamerka.qml:449
 msgid "No Effect"
-msgstr ""
+msgstr "Sem efeitos"
 
 #: src/kamerka.qml:460
 msgid "Grey"
-msgstr ""
+msgstr "Cinza"
 
 #: src/kamerka.qml:471
 msgid "Invert"
-msgstr ""
+msgstr "Inverter"
 
 #: src/kamerka.qml:482
 msgid "Mono"
-msgstr ""
+msgstr "Mono"
 
 #: src/kamerka.qml:495
 msgid "Smurf"
-msgstr ""
+msgstr "Smurf"
 
 #: src/main.cpp:36
 msgid "Kamerka"
-msgstr ""
+msgstr "Kamerka"
 
 #: src/main.cpp:37
 msgid "Simple photo taking application with fancy animated interface"
-msgstr ""
+msgstr "Simples foto com aplicação de fantasia animada"
 
 #: src/main.cpp:38
+#, fuzzy
 msgid "Copyright (c) 2011-2012 Sebastian Krzyszkowiak"
-msgstr ""
+msgstr "Copyright (c) 2011 Sebastian Krzyszkowiak"
 
 #: src/mainwindow.cpp:36
 msgid "i18n() takes at least one argument"
-msgstr ""
+msgstr "i18n() requer ao menos um argumento"
 
 #: src/mainwindow.cpp:54
 msgid "Could not load QML interface!"
-msgstr ""
+msgstr "¡Não foi possível carregar a interface QML!"
 
-#: src/mainwindow.cpp:54 src/mainwindow.cpp:130 src/mainwindow.cpp:146
+#: src/mainwindow.cpp:54
+#: src/mainwindow.cpp:130
+#: src/mainwindow.cpp:146
 msgid "Error"
-msgstr ""
+msgstr "Erro"
 
-#: src/mainwindow.cpp:126 src/mainwindow.cpp:130 src/mainwindow.cpp:146
+#: src/mainwindow.cpp:126
+#: src/mainwindow.cpp:130
+#: src/mainwindow.cpp:146
 msgid "Could not connect to V4L device!"
-msgstr ""
+msgstr "¡Não foi possível se conectar ao dispositivo V4L!"
 
 #: src/mainwindow.cpp:175
 msgid ""
 "Requested resolution (%1x%2) was not available. Driver used %3x%4 instead.\n"
 "Please check your configuration."
 msgstr ""
+"A resolução solicitada (%1x%2) não está disponivel. O driver usará %3x%4.\n"
+"Compruebe la configuración."
 
 #: src/settingsdialog.cpp:42
 msgid "Selected path does not exists. Do you want to create it?"
-msgstr ""
+msgstr "O caminho escolhido não existe. Deseja criar?"
 
 #: src/settingsdialog.cpp:59
 msgid "Device node:"
-msgstr ""
+msgstr "Dispositivo:"
 
 #: src/settingsdialog.cpp:66
 msgid "x"
-msgstr ""
+msgstr "x"
 
 #: src/settingsdialog.cpp:71
 msgid "px"
-msgstr ""
+msgstr "px"
 
 #: src/settingsdialog.cpp:72
 msgid "Resolution:"
-msgstr ""
+msgstr "Resolução:"
 
 #: src/settingsdialog.cpp:77
 msgid "Disabled"
-msgstr ""
+msgstr "Desabilitado"
 
 #: src/settingsdialog.cpp:78
 msgid " fps"
-msgstr ""
+msgstr " fps"
 
 #: src/settingsdialog.cpp:80
 msgid "Framerate limit:"
-msgstr ""
+msgstr "Limite de frames"
 
 #: src/settingsdialog.cpp:82
 msgid "Lock aspect ratio"
-msgstr ""
+msgstr "Bloquear proporção"
 
 #: src/settingsdialog.cpp:85
 msgid "Mirror output"
-msgstr ""
+msgstr "Saída espelhada"
 
 #: src/settingsdialog.cpp:88
 msgid "Flip output"
-msgstr ""
+msgstr "Saida fip"
 
 #: src/settingsdialog.cpp:93
 msgid "Camera"
-msgstr ""
+msgstr "Cámara"
 
 #: src/settingsdialog.cpp:93
 msgid "Camera settings"
-msgstr ""
+msgstr "Ajustes de cámara"
 
 #: src/settingsdialog.cpp:100
 msgid "Use default pictures directory"
-msgstr ""
+msgstr "Use o diretório de imagens padrão"
 
 #: src/settingsdialog.cpp:107
 msgid "Use subdirectory:"
-msgstr ""
+msgstr "Usar subdiretório:"
 
 #: src/settingsdialog.cpp:119
 msgid "Photo directory:"
-msgstr ""
+msgstr "Diretório de imagens:"
 
 #: src/settingsdialog.cpp:121
 msgid "Storage"
-msgstr ""
+msgstr "Armazenamento"
 
 #: src/settingsdialog.cpp:121
 msgid "Photo storage"
-msgstr ""
+msgstr "Armazenamento de imágenes"
 
 #: src/settingsdialog.cpp:127
 msgid "Play sound on taking photo"
-msgstr ""
+msgstr "Reproduzir som ao tirar uma foto"
 
 #: src/settingsdialog.cpp:130
 msgid "Play timer sounds"
-msgstr ""
+msgstr "Reproduzir sons temporizados"
 
 #: src/settingsdialog.cpp:133
 msgid "Show notification on taking photo"
-msgstr ""
+msgstr "Mostrar notificação ao tomar foto"
 
 #: src/settingsdialog.cpp:137
 msgid "Behaviour"
-msgstr ""
+msgstr "Comportamento"
 
 #: src/videowidget.cpp:98
 msgid "Starting up webcam..."
-msgstr ""
+msgstr "Iniciando a webcam..."
 
 #: src/videowidget.cpp:160
 msgid "Photo has been stored in file %1"
-msgstr ""
+msgstr "Foto guardada como %1"
 
 #: src/videowidget.cpp:165
 msgid "Show in directory"
-msgstr ""
+msgstr "Mostrar no diretório"
 
 #: src/videowidget.cpp:165
 msgid "Open in GIMP"
-msgstr ""
+msgstr "Abrir com GIMP"
 
 #: src/videowidget.cpp:165
 msgid "Open in Inkscape"
-msgstr ""
+msgstr "Abrir com Inkscape"
 
-#: tools/rc.cpp:1 rc.cpp:1
+#: tools/rc.cpp:1
+#: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Seus nomes"
 
-#: tools/rc.cpp:2 rc.cpp:2
+#: tools/rc.cpp:2
+#: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "Seu email"
+
