@@ -16,19 +16,24 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
-import Qt 4.7;
+import QtQuick 1.1;
 import Effects 1.0;
 
 
 Rectangle {
     property int rand: 0;
-    property bool take: false;
+    property bool take: true;
+    property int selftimer;
     property int timercount: 5;
     property bool timeranim: false;
     property bool more: false;
     property bool canvasVisible: false;
     property bool recording: false;
     property bool effects: false;
+    property int currentEffect: 0;
+    property int burstPhotoNumber;
+    property int burstPhotosDone: 0;
+    property int delayBetweenPhotosBurst;
 
     signal takePhoto();
     signal timerCounter(int count);
@@ -37,8 +42,14 @@ Rectangle {
     signal applyEffect(int efx);
 
     id: page;
-    width: 640; height: 480;
     color: "transparent";
+
+    // Load the "FontAwesome" font for the monochrome icons.
+    FontLoader {
+        source: "fonts/fontawesome-webfont.ttf";
+        id: fontAwesome;
+    }
+
 
     Rectangle {
         effect: DropShadow {
@@ -94,28 +105,25 @@ Rectangle {
             opacity: 1;
             width: parent.width-20;
             height: parent.height-50;
-            color: "black";
+            color: "white";
             smooth: true;
-            /*
-             Image {
-                 effect: Blur {
-                   blurRadius: 8
-                 }
-                 opacity: 0.75;
-                anchors.fill: parent;
-                source: fileName;
-                smooth: true;
-             }
-             */
             Image {
                 id: preview;
                 anchors.fill: parent;
+                fillMode: Image.PreserveAspectFit;
                 source: fileName;
                 smooth: true;
+                asynchronous: true;
+                cache: false;
             }
         }
 
     }
+    function setEffect(id) {
+        page.currentEffect = id;
+        page.applyEffect(id);
+    }
+
     function doPhoto() {
         take=false;
         page.takePhoto();
@@ -130,7 +138,7 @@ Rectangle {
 
     function timerGo() {
         timer.running = true;
-        page.timercount=5;
+        page.timercount=page.selftimer;
         timerTriggered();
     }
     function timerTriggered() {
@@ -147,10 +155,20 @@ Rectangle {
         page.timercount--;
         page.timeranim=true;
     }
-    function moreOrLess() {
-        if (more) { more=false; }
-        else { more=true; }
+
+    function doBurstPhoto(){
+        burstshot.active = true;
+        if(page.burstPhotosDone < page.burstPhotoNumber){
+            doPhoto();
+            page.burstPhotosDone ++;
+        }
+        else{
+            burstPhotosTimer.stop();
+            page.burstPhotosDone = 0;
+            burstshot.active = false;
+        }
     }
+
     function showCanvasBackground() {
         canvasVisible=true;
     }
@@ -190,77 +208,112 @@ Rectangle {
 
     Rectangle {
         id: toolbar;
-        y: page.height-(height/2);
+        y: page.height-height;
         anchors.horizontalCenter: page.horizontalCenter;
-        width: 0.75*page.width;
-        height: 75;
-        color: "#33000000";
-        radius: 10;
+        width: height*6-24;
+        height: Math.max(Math.min(144, Math.min(page.height,page.width)/6),26);
         opacity: 1;
+        color: "transparent";
 
         Button {
             id: shot;
             anchors.left: parent.left;
-            anchors.bottom: parent.verticalCenter;
+            anchors.bottom: parent.bottom;
+            anchors.bottomMargin: 4;
+            width: parent.height-8;
+            height: parent.height-8;
+            tooltip: i18n("Take a photo");
+            font.pointSize: width/2;
+            font.family: fontAwesome.name;
+            text: "\uF083";
+            mouse.onClicked: doPhoto();
+            z: 11;
+        }
+        Button {
+            id: burstshot;
+            anchors.left: shot.right;
+            anchors.bottom: parent.bottom;
             anchors.bottomMargin: 4;
             anchors.leftMargin: 4;
-            width: (parent.width/3)-8;
-            text: i18n("Take a photo");
-            mouse.onClicked: doPhoto();
+            width: parent.height-8;
+            height: parent.height-8;
+            tooltip: i18n("Burst mode");
+            font.pointSize: width/2;
+            font.family: fontAwesome.name;
+            text: "\uF00a";
+            mouse.onClicked: burstPhotosTimer.start();
+            z: 10;
+            Timer {
+                id: burstPhotosTimer;
+                interval: page.delayBetweenPhotosBurst * 1000;
+                running: false;
+                repeat: true;
+                triggeredOnStart: true;
+                onTriggered: doBurstPhoto();
+            }
         }
         Button {
             id: autoshot;
-            anchors.left: shot.right;
-            anchors.bottom: parent.verticalCenter;
+            anchors.left: burstshot.right;
+            anchors.bottom: parent.bottom;
             anchors.bottomMargin: 4;
-            anchors.leftMargin: 2;
-            width: (parent.width/3)-8;
-            text: i18n("Self-timer");
-            mouse.onClicked: timerGo();
-        }
-        Button {
-            id: moreBtn;
-            anchors.left: autoshot.right;
-            anchors.bottom: parent.verticalCenter;
-            anchors.bottomMargin: 4;
-            anchors.leftMargin: 2;
-            anchors.right:  parent.right;
-            anchors.rightMargin:  4;
-            text: more ? i18n("Less") : i18n("More");
-            mouse.onClicked: moreOrLess();
-        }
-        Button {
-            id: configure;
-            anchors.left: parent.left;
-            anchors.top: parent.verticalCenter;
-            anchors.topMargin: 4;
             anchors.leftMargin: 4;
-            width: (parent.width/3)-8;
-            text: i18n("Configure");
-            mouse.onClicked: showConfiguration();
+            width: parent.height-8;
+            height: parent.height-8;
+            tooltip: i18n("Self-timer");
+            font.pointSize: width/2;
+            font.family: fontAwesome.name;
+            text: "\uf017";
+            mouse.onClicked: timerGo();
+            z: 9;
         }
+
         Button {
             id: effectsBtn;
-            anchors.left: configure.right;
-            anchors.top: parent.verticalCenter;
-            anchors.topMargin: 4;
-            anchors.leftMargin: 2;
-            width: (parent.width/3)-8;
-            text: effects ? i18n("Hide effects") : i18n("Show effects");
+            anchors.left: autoshot.right;
+            anchors.bottom: parent.bottom;
+            anchors.bottomMargin: 4;
+            anchors.leftMargin: 4;
+            width: parent.height-8;
+            height: parent.height-8;
+            tooltip: effects ? i18n("Hide effects") : i18n("Show effects");
+            font.pointSize: width/2;
+            font.family: fontAwesome.name;
+            text: "\uf0d0";
             mouse.onClicked: toggleEffects();
+            active: effects;
+            z: 8;
         }
         Button {
             id: dolphin;
             anchors.left: effectsBtn.right;
-            anchors.top: parent.verticalCenter;
-            anchors.topMargin: 4;
-            anchors.leftMargin: 2;
-            anchors.right:  parent.right;
-            anchors.rightMargin:  4;
-            text: i18n("Open directory");
+            anchors.bottom: parent.bottom;
+            anchors.bottomMargin: 4;
+            anchors.leftMargin: 4;
+            width: parent.height-8;
+            height: parent.height-8;
+            tooltip: i18n("Open directory");
+            font.family: fontAwesome.name;
+            text: "\uf115";
+            font.pointSize: width/2;
             mouse.onClicked: showDirectory();
+            z: 7;
         }
-
+        Button {
+            id: configure;
+            anchors.left: dolphin.right;
+            anchors.bottom: parent.bottom;
+            anchors.bottomMargin: 4;
+            anchors.leftMargin: 4;
+            width: parent.height-8;
+            height: parent.height-8;
+            tooltip: i18n("Configure");
+            font.pointSize: width/2;
+            font.family: fontAwesome.name;
+            text: "\uf013";
+            mouse.onClicked: showConfiguration();
+            z: 6;
+        }
 
         states: [
             State {
@@ -282,7 +335,6 @@ Rectangle {
                 PropertyChanges {
                     target: toolbar;
                     y: page.height-height-4;
-                    color: "#AA000000";
                 }
             }
         ]
@@ -434,67 +486,204 @@ Rectangle {
         id: effectHolder;
         x: 0 - effectHolder.width;
         y: 20;
-        height: 210;
-        width: 110;
-        color: "#AA000000";
-        radius: 10;
+        height: page.height-40;
+        width: 140;
+        color: "transparent";
+        radius: 6;
+
+        MouseArea {
+            id: mouseArea;
+            anchors.fill: parent;
+            hoverEnabled: true;
+        }
 
         Button {
             id: effect_none;
             x: 0;
             anchors.top: parent.top;
-            anchors.topMargin: 10;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
             anchors.right: parent.right;
             anchors.rightMargin: 5;
             text: i18n("No Effect");
-            mouse.onClicked: applyEffect(0);
+            mouse.onClicked: setEffect(0);
+            active: currentEffect === 0;
+            font.weight: active ? Font.Bold : Font.Normal;
         }
 
         Button {
             id: effect_grey;
             x: 0;
             anchors.top: effect_none.bottom;
-            anchors.topMargin: 10;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
             anchors.right: parent.right;
             anchors.rightMargin: 5;
             text: i18n("Grey");
-            mouse.onClicked: applyEffect(1);
+            mouse.onClicked: setEffect(1);
+            active: currentEffect === 1;
+            font.weight: active ? Font.Bold : Font.Normal;
         }
 
         Button {
             id: effect_invert;
             x: 0;
             anchors.top: effect_grey.bottom;
-            anchors.topMargin: 10;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
             anchors.right: parent.right;
             anchors.rightMargin: 5;
             text: i18n("Invert");
-            mouse.onClicked: applyEffect(2);
+            mouse.onClicked: setEffect(2);
+            active: currentEffect === 2;
+            font.weight: active ? Font.Bold : Font.Normal;
         }
 
         Button {
-            id: effect_mono;
+            id: effect_equalize;
             x: 0;
             anchors.top: effect_invert.bottom;
-            anchors.topMargin: 10;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
             anchors.right: parent.right;
             anchors.rightMargin: 5;
-            text: i18n("Mono");
-            mouse.onClicked: applyEffect(3);
+            text: i18n("Equalize");
+            mouse.onClicked: setEffect(3);
+            active: currentEffect === 3;
+            font.weight: active ? Font.Bold : Font.Normal;
         }
 
         Button {
             id: effect_smurf;
             x: 0;
-            anchors.top: effect_mono.bottom;
-            anchors.topMargin: 10;
+            anchors.top: effect_equalize.bottom;
+            anchors.topMargin: 4;
             anchors.left: parent.left;
             anchors.leftMargin: 5;
             anchors.right: parent.right;
             anchors.rightMargin: 5;
             text: i18n("Smurf");
-            mouse.onClicked: applyEffect(4);
+            mouse.onClicked: setEffect(4);
+            active: currentEffect === 4;
+            font.weight: active ? Font.Bold : Font.Normal;
         }
+        Button {
+            id: effect_implode;
+            x: 0;
+            anchors.top: effect_smurf.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Implode");
+            mouse.onClicked: setEffect(5);
+            active: currentEffect === 5;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+        Button {
+            id: effect_explode;
+            x: 0;
+            anchors.top: effect_implode.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Explode");
+            mouse.onClicked: setEffect(6);
+            active: currentEffect === 6;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+        Button {
+            id: effect_charcoal;
+            x: 0;
+            anchors.top: effect_explode.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Charcoal");
+            mouse.onClicked: setEffect(7);
+            active: currentEffect === 7;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+        Button {
+            id: effect_edge;
+            x: 0;
+            anchors.top: effect_charcoal.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Edge");
+            mouse.onClicked: setEffect(8);
+            active: currentEffect === 8;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+        Button {
+            id: effect_emboss;
+            x: 0;
+            anchors.top: effect_edge.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Emboss");
+            mouse.onClicked: setEffect(9);
+            active: currentEffect === 9;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+        Button {
+            id: effect_swirl;
+            x: 0;
+            anchors.top: effect_emboss.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Swirl");
+            mouse.onClicked: setEffect(10);
+            active: currentEffect === 10;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+        Button {
+            id: effect_oilpaint;
+            x: 0;
+            anchors.top: effect_swirl.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Oil Paint");
+            mouse.onClicked: setEffect(11);
+            active: currentEffect === 11;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+        Button {
+            id: effect_wave;
+            x: 0;
+            anchors.top: effect_oilpaint.bottom;
+            anchors.topMargin: 4;
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            text: i18n("Wave");
+            mouse.onClicked: setEffect(12);
+            active: currentEffect === 12;
+            font.weight: active ? Font.Bold : Font.Normal;
+        }
+
 
         states: [
             State {
@@ -512,7 +701,7 @@ Rectangle {
                 }
             },
             State {
-                name: "effects"; when: effects == true && more == true;
+                name: "effects"; when: effects == true;
                 PropertyChanges {
                     target: effectHolder;
                     x: 4;

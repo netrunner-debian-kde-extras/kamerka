@@ -65,7 +65,7 @@ void MainWindow::takePhoto() {
 void MainWindow::timerCounter(int count) {
 	//kDebug(QString::number(count).toStdString().c_str());
 	if ((count==5) && (Settings::soundontimer())) {
-		videoViewer->media->setCurrentSource(KStandardDirs::locate("data", "kamerka/timer.ogg"));
+		videoViewer->media->setCurrentSource(QUrl(KStandardDirs::locate("data", "kamerka/timer.ogg")));
 		videoViewer->media->play();
 	}
 }
@@ -76,7 +76,6 @@ void MainWindow::showDirectory() {
 	dir.mkpath(Settings::photodir());
 	dir.setPath(Settings::photodir());
 	QProcess::startDetached("xdg-open", QStringList() << dir.absolutePath());
-	QApplication::quit();
 }
 
 void MainWindow::closeCanvasLayer() {
@@ -130,11 +129,14 @@ void MainWindow::loadSettings() {
 			KMessageBox::error(this, i18n("Could not connect to V4L device!"), i18n("Error"), KMessageBox::Dangerous);
 		}
 	}
+	videoViewer->ui->rootObject()->setProperty("burstPhotoNumber", Settings::burstnumphotos());
+	videoViewer->ui->rootObject()->setProperty("delayBetweenPhotosBurst", Settings::delaybetweenphotos());
+	videoViewer->ui->rootObject()->setProperty("selftimer", Settings::selftimer());
 	videoViewer->resize(this->size());
 }
 
 void MainWindow::applyEffect(int effect) {
-	videoViewer -> effect = effect;
+	videoViewer->thread.effect = effect;
 }
 
 void MainWindow::tryVideoThread() {
@@ -245,6 +247,11 @@ MainWindow::MainWindow() {
 	// let widgets have transparent background
 	ui->setStyleSheet("background: transparent");
 	videoViewer->setStyleSheet("background: transparent");
+
+	// Burst mode settings
+	videoViewer->ui->rootObject()->setProperty("burstPhotoNumber", Settings::burstnumphotos());
+	videoViewer->ui->rootObject()->setProperty("delayBetweenPhotosBurst", Settings::delaybetweenphotos());
+	videoViewer->ui->rootObject()->setProperty("selftimer", Settings::selftimer());
 
 	// resize QML UI together with window
 	ui->setResizeMode(QDeclarativeView::SizeRootObjectToView);
