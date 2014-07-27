@@ -1,157 +1,160 @@
-# Kamerka Serbian Latin Translation.
-# Copyright (C) 2011-2014 Sebastian Krzyszkowiak
+# Kamerka Serbian Translation.
+# Copyright (C) 2011 Sebastian Krzyszkowiak
 #
-# Mladen Pejaković <pejakm@autistici.org>, 2011, 2014.
+# Urs Fleisch <dos@dosowisko.net>, 2011.
+# Mladen Pejaković <pejakm@gmail.com>, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: Kamerka\n"
 "Report-Msgid-Bugs-To: dos@dosowisko.net\n"
 "POT-Creation-Date: 2014-07-27 22:55+0200\n"
-"PO-Revision-Date: 2014-03-27 12:46+0100\n"
-"Last-Translator: Mladen Pejaković <pejakm@autistici.org>\n"
-"Language-Team: Serbian <kde-i18n-sr@lists.kde.org>\n"
-"Language: sr@latin\n"
+"PO-Revision-Date: 2014-04-26 00:24+0300\n"
+"Last-Translator: Сергей Головко <cappelikan@gmail.com>\n"
+"Language-Team: Russian <kde-i18n-ru@lists.kde.org>\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
 #: rc.cpp:1 tools/rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Mladen Pejaković"
+msgstr "Сергей Головко"
 
 #: rc.cpp:2 tools/rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "pejakm@autistici.org"
+msgstr "cappelikan@gmail.com"
 
 #: src/kamerka.qml:225
 msgid "Take a photo"
-msgstr "Fotografiši"
+msgstr "Сфотографируйте"
 
 #: src/kamerka.qml:240 src/settingsdialog.cpp:114
 msgid "Burst mode"
-msgstr "Režim uzastopnog okidanja"
+msgstr ""
 
 #: src/kamerka.qml:263 src/settingsdialog.cpp:102
 msgid "Self-timer"
-msgstr "Samookidač"
+msgstr "Таймер"
 
 #: src/kamerka.qml:279
 msgid "Hide effects"
-msgstr "Sakrij efekte"
+msgstr "Скрыть еффекты"
 
 #: src/kamerka.qml:279
 msgid "Show effects"
-msgstr "Prikaži efekte"
+msgstr "Показать еффекты"
 
 #: src/kamerka.qml:295
 msgid "Open directory"
-msgstr "Otvori fasciklu"
+msgstr "Открыть папку"
 
 #: src/kamerka.qml:310
 msgid "Configure"
-msgstr "Podesi"
+msgstr "Конфигурация"
 
 #: src/kamerka.qml:509
 msgid "No Effect"
-msgstr "Bez efekta"
+msgstr "Без еффекта"
 
 #: src/kamerka.qml:524
 msgid "Grey"
-msgstr "Sivilo"
+msgstr "Серый"
 
 #: src/kamerka.qml:539
 msgid "Invert"
-msgstr "Izvrnuto"
+msgstr "Искажение"
 
 #: src/kamerka.qml:554
 msgid "Equalize"
-msgstr "Ujednačeno"
+msgstr ""
 
 #: src/kamerka.qml:569
 msgid "Smurf"
-msgstr "Štrumf"
+msgstr "Штрумф"
 
 #: src/kamerka.qml:583
 msgid "Implode"
-msgstr "Implozija"
+msgstr ""
 
 #: src/kamerka.qml:597
 msgid "Explode"
-msgstr "Eksplozija"
+msgstr ""
 
 #: src/kamerka.qml:611
 msgid "Charcoal"
-msgstr "Ugalj"
+msgstr ""
 
 #: src/kamerka.qml:625
 msgid "Edge"
-msgstr "Ivice"
+msgstr ""
 
 #: src/kamerka.qml:639
 msgid "Emboss"
-msgstr "Uklesano"
+msgstr ""
 
 #: src/kamerka.qml:653
 msgid "Swirl"
-msgstr "Kovitlac"
+msgstr ""
 
 #: src/kamerka.qml:667
 msgid "Oil Paint"
-msgstr "Ulje na platnu"
+msgstr ""
 
 #: src/kamerka.qml:681
 msgid "Wave"
-msgstr "Talas"
+msgstr ""
 
 #: src/main.cpp:36
 msgid "Kamerka"
-msgstr "Kamerka"
+msgstr "Камерка"
 
 #: src/main.cpp:37
 msgid "Simple photo taking application with fancy animated interface"
 msgstr ""
-"Jednostavna aplikacija za hvatanje fotografija sa lepim animiranim sučeljem"
+"Простое приложение для захвата изображения с красивым анимированным "
+"интерфейсом"
 
 #: src/main.cpp:38
+#, fuzzy
 msgid "Copyright (C) 2011-2014 Sebastian Krzyszkowiak"
-msgstr "© 2011-2014 Sebastijan Kšiškovijak (Sebastian Krzyszkowiak)"
+msgstr "© 2011-2012 Себастиан Кшишковияк (Sebastian Krzyszkowiak)"
 
 #: src/mainwindow.cpp:36
 msgid "i18n() takes at least one argument"
-msgstr "i18n() zahteva bar jedan argument"
+msgstr "i18n() требуется как минимум один аргумент"
 
 #: src/mainwindow.cpp:54
 msgid "Could not load QML interface!"
-msgstr "Ne mogu da učitam QML sučelje!"
+msgstr "Не удается загрузить интерфейс QML!"
 
 #: src/mainwindow.cpp:54 src/mainwindow.cpp:129 src/mainwindow.cpp:148
 msgid "Error"
-msgstr "Greška"
+msgstr "Ошибка"
 
 #: src/mainwindow.cpp:125 src/mainwindow.cpp:129 src/mainwindow.cpp:148
 msgid "Could not connect to V4L device!"
-msgstr "Ne mogu da se povežem sa V4L uređajem!"
+msgstr "Я не могу подключиться к устройству V4L!"
 
 #: src/mainwindow.cpp:177
 msgid ""
 "Requested resolution (%1x%2) was not available. Driver used %3x%4 instead.\n"
 "Please check your configuration."
 msgstr ""
-"Zahtevana rezolucija (%1x%2) nije dostupna. Drajver je koristio %3x%4.\n"
-"Proverite vaše postavke."
+"Запрашиваемое разрешение (% 1x% 2) не доступно. Драйвер использовал 3x%% 4 \n"
+" Проверьте настройки."
 
 #: src/settingsdialog.cpp:42
 msgid "Selected path does not exists. Do you want to create it?"
-msgstr "Izabrana putanja ne postoji. Želite li da je napravite?"
+msgstr "Выбранный путь не существует. Вы хотите его создать?"
 
 #: src/settingsdialog.cpp:59
 msgid "Device node:"
-msgstr "Čvor uređaja:"
+msgstr "Узел ( имя ) устройства:"
 
 #: src/settingsdialog.cpp:66
 msgid "x"
@@ -163,11 +166,11 @@ msgstr "px"
 
 #: src/settingsdialog.cpp:72
 msgid "Resolution:"
-msgstr "Rezolucija"
+msgstr "Разрешение:"
 
 #: src/settingsdialog.cpp:77
 msgid "Disabled"
-msgstr "Onemogućeno"
+msgstr "Отключено"
 
 #: src/settingsdialog.cpp:78
 msgid " fps"
@@ -175,104 +178,114 @@ msgstr " fps"
 
 #: src/settingsdialog.cpp:80
 msgid "Framerate limit:"
-msgstr "Ograničenje brzine kadrova:"
+msgstr "Ограничение скорости:"
 
 #: src/settingsdialog.cpp:82
 msgid "Enhance contrast"
-msgstr "Poboljšaj kontrast"
+msgstr ""
 
 #: src/settingsdialog.cpp:85
 msgid "Lock aspect ratio"
-msgstr "Zadrži razmeru"
+msgstr "Блокировка соотношения сторон"
 
 #: src/settingsdialog.cpp:88
 msgid "Mirror output"
-msgstr "Preslikano"
+msgstr "Зеркальный вывод"
 
 #: src/settingsdialog.cpp:91
 msgid "Flip output"
-msgstr "Obrnuto"
+msgstr "Вывод наоборот"
 
 #: src/settingsdialog.cpp:96
 msgid "Camera"
-msgstr "Kamera"
+msgstr "Камера"
 
 #: src/settingsdialog.cpp:96
 msgid "Camera settings"
-msgstr "Postavke kamere"
+msgstr "Настройка камеры"
 
 #: src/settingsdialog.cpp:107 src/settingsdialog.cpp:125
 msgid " seconds"
-msgstr " sekundi"
+msgstr ""
 
 #: src/settingsdialog.cpp:110
+#, fuzzy
 msgid "Self-timer timeout:"
-msgstr "Vreme samookidača:"
+msgstr "Таймер"
 
 #: src/settingsdialog.cpp:121
 msgid "Number of photos:"
-msgstr "Broj fotografija:"
+msgstr ""
 
 #: src/settingsdialog.cpp:128
 msgid "Delay between photos:"
-msgstr "Zastoj okidanja:"
+msgstr ""
 
 #: src/settingsdialog.cpp:132
 msgid "Capture"
-msgstr "Hvatanje"
+msgstr ""
 
 #: src/settingsdialog.cpp:140
 msgid "Use default pictures directory"
-msgstr "Koristi podrazumevanu fasciklu slika"
+msgstr "Используйте папку для изображений по умолчанию"
 
 #: src/settingsdialog.cpp:147
 msgid "Use subdirectory:"
-msgstr "Otvori podfasciklu"
+msgstr "Откройте вложенную папку:"
 
 #: src/settingsdialog.cpp:160
 msgid "Photo directory:"
-msgstr "Fascikla fotografija:"
+msgstr "Папка изображения:"
 
 #: src/settingsdialog.cpp:162
 msgid "Storage"
-msgstr "Spremište"
+msgstr "Хранилище"
 
 #: src/settingsdialog.cpp:162
 msgid "Photo storage"
-msgstr "Spremište fotografija"
+msgstr "Хранилище изображений"
 
 #: src/settingsdialog.cpp:168
 msgid "Play sound on taking photo"
-msgstr "Pusti zvuk pri fotografisanju"
+msgstr "Воспроизведение звука при съемке"
 
 #: src/settingsdialog.cpp:171
 msgid "Play timer sounds"
-msgstr "Puštaj zvuke tajmera"
+msgstr "Играть звуки таймера"
 
 #: src/settingsdialog.cpp:174
 msgid "Show notification on taking photo"
-msgstr "Prikaži obaveštenje pri fotografisanju"
+msgstr "Показывать уведомление при съемке"
 
 #: src/settingsdialog.cpp:178
 msgid "Behaviour"
-msgstr "Ponašanje"
+msgstr "Поведение"
 
 #: src/videowidget.cpp:96
 msgid "Starting up webcam..."
-msgstr "Pokrećem veb-kameru..."
+msgstr "Запуск веб-камеры ..."
 
 #: src/videowidget.cpp:162
 msgid "Photo has been stored in file %1"
-msgstr "Fotografija je smeštena u fajl %1"
+msgstr "Фото расположено в файле% 1"
 
 #: src/videowidget.cpp:167
 msgid "Show in directory"
-msgstr "Pokaži u fascikli"
+msgstr "Показать в папке"
 
 #: src/videowidget.cpp:167
 msgid "Open in GIMP"
-msgstr "Otvori u Gimpu"
+msgstr "Открыть в ГИМПе"
 
 #: src/videowidget.cpp:167
 msgid "Open in Inkscape"
-msgstr "Otvori u Inkskejpu"
+msgstr "Открыть в Инкскейпе"
+
+#~ msgid "Less"
+#~ msgstr "Менее"
+
+#~ msgid "More"
+#~ msgstr "Более"
+
+#~ msgid "Mono"
+#~ msgstr "монохромный"

@@ -17,8 +17,10 @@
  * Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#include <qimageblitz/qimageblitz.h>
 #include "capturethread.h"
 #include "settings.h"
+#include "imageeffect.h"
 
 #define CLEAR(x) memset(&(x), 0, sizeof(x))
 
@@ -35,6 +37,7 @@ void xioctl(int fh, int request, void *arg) {
 }
 
 CaptureThread::CaptureThread() {
+	effect = 0;
 	running = false;
 }
 
@@ -80,18 +83,16 @@ void CaptureThread::run() {
 
 		QImage *qq=new QImage();
 
-		if(qq->loadFromData(asil,fmt.fmt.pix.sizeimage+qstrlen(header), "PPM")){
+		if (qq->loadFromData(asil,fmt.fmt.pix.sizeimage+qstrlen(header), "PPM")) {
+
+			if (Settings::normalize()) {
+				Blitz::normalize(*qq);
+			}
+
+			ImageEffect::applyEffect(*qq, effect);
+
 			QTransform outTransform;
-
-			if(Settings::mirror()){
-				// scaling x * -1 - making the output image mirror.
-				outTransform.scale(-1, 1);
-			}
-
-			if(Settings::flip()){
-				// flipping y * -1
-				outTransform.scale(1, -1);
-			}
+			outTransform.scale(Settings::mirror() ? -1 : 1, Settings::flip() ? -1 : 1);
 
 			emit renderedImage(qq->transformed(outTransform));
 		}

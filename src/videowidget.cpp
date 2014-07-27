@@ -23,7 +23,6 @@
 
 #include "settings.h"
 #include "videowidget.h"
-#include "imageeffect.cpp"
 
 // Notification class is used to connect to notification signal
 Notification::Notification (QString name, QString filename) : KNotification(name) {
@@ -50,7 +49,6 @@ void Notification::openFile (unsigned int i) {
 
 videowidget::videowidget(QWidget *parent) : QWidget(parent) {
 	storeImage=false;
-	effect=NULL;
 	connect(&thread, SIGNAL(renderedImage(QImage)),
 					this, SLOT(setPicture(QImage)));
 
@@ -104,8 +102,6 @@ void videowidget::paintEvent(QPaintEvent *) {
 // image was transfered from capturethread to us - display it and, if requested, store
 void videowidget::setPicture(QImage i) {
 
-	ImageEffect::applyEffect(i, effect);
-
 	pixmap=QPixmap::fromImage(i);
 	update();
 
@@ -117,7 +113,7 @@ void videowidget::setPicture(QImage i) {
 
 		// play sound
 		if (Settings::soundontaking()) {
-			media->setCurrentSource(KStandardDirs::locate("data", "kamerka/camera_click.ogg"));
+			media->setCurrentSource(QUrl(KStandardDirs::locate("data", "kamerka/camera_click.ogg")));
 			media->play();
 		}
 
@@ -132,8 +128,17 @@ void videowidget::setPicture(QImage i) {
 			counter >> c;
 		}
 		else kWarning() << "Could not open .counter file!";
-		c++;
 		counterfile.close();
+
+		// determine file name
+		QString imagepath;
+		do {
+			c++;
+			imagepath = "image";
+			imagepath += QString::number(c);
+			imagepath += ".png";
+			imagepath = dir.absoluteFilePath(imagepath);
+		} while (QFile::exists(imagepath));
 
 		// store incremented value in counter file
 		counterfile.open(QIODevice::WriteOnly);
@@ -142,13 +147,10 @@ void videowidget::setPicture(QImage i) {
 		counterfile.close();
 
 		// save image
-		QString imagepath;
-		imagepath = "image";
-		imagepath += QString::number(c);
-		imagepath += ".png";
-		imagepath = dir.absoluteFilePath(imagepath);
 		kDebug() << QString("%1").arg(imagepath);
 		i.save(imagepath, "PNG");
+
+
 
 		// show taken photo and trigger animation in QML UI
 		ui->rootContext()->setContextProperty("fileName", "file:"+imagepath);
